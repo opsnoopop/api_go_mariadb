@@ -119,7 +119,7 @@ docker run \
 --rm \
 -it \
 --network global_optest \
-opsnoopop/ubuntu-tool:1.0 \
+opsnoopop/ubuntu:24.04 \
 sysbench \
 --threads=2 \
 --time=10 \
@@ -142,7 +142,7 @@ docker run \
 -it \
 --network global_optest \
 -v ./sysbench/:/sysbench/ \
-opsnoopop/ubuntu-tool:1.0 \
+opsnoopop/ubuntu:24.04 \
 sysbench \
 --threads=2 \
 --time=10 \
@@ -164,7 +164,7 @@ docker run \
 --rm \
 -it \
 --network global_optest \
-opsnoopop/ubuntu-tool:1.0 \
+opsnoopop/ubuntu:24.04 \
 sysbench \
 --threads=2 \
 --time=10 \
@@ -218,16 +218,6 @@ grafana/k6:1.1.0 \
 run /k6/k6_3_ramping_get_user_by_id.js
 ```
 
-### check entrypoint grafana/k6
-```bash
-docker run \
---name container_k6 \
---rm \
--it \
---entrypoint \
-/bin/sh grafana/k6:1.1.0
-```
-
 
 ## Test Performance by wrk
 
@@ -239,7 +229,7 @@ docker run \
 -it \
 --network global_optest \
 -v ./wrk/:/wrk/ \
-opsnoopop/ubuntu-tool:1.1 \
+opsnoopop/ubuntu:24.04 \
 wrk -c1000 -t2 -d10s http://172.16.0.11:3000
 ```
 
@@ -251,7 +241,7 @@ docker run \
 -it \
 --network global_optest \
 -v ./wrk/:/wrk/ \
-opsnoopop/ubuntu-tool:1.1 \
+opsnoopop/ubuntu:24.04 \
 wrk -c1000 -t2 -d10s -s /wrk/create_user.lua http://172.16.0.11:3000/users
 ```
 
@@ -263,7 +253,7 @@ docker run \
 -it \
 --network global_optest \
 -v ./wrk/:/wrk/ \
-opsnoopop/ubuntu-tool:1.1 \
+opsnoopop/ubuntu:24.04 \
 wrk -c1000 -t2 -d10s http://172.16.0.11:3000/users/1
 ```
 

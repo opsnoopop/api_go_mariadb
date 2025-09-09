@@ -9,4 +9,6 @@ k6/
 pkg/
 mariadb/
 mariadb_initdb/
-test*.sh
+sysbench/
+wrk/
+*.sh

@@ -21,7 +21,6 @@ export const options = {
         { duration: '5s', target: 10000 },
         { duration: '5s', target: 0 },    // ramp-down
       ],
-      gracefulStop: '5s',
     },
   },
   thresholds: {
@@ -72,7 +71,7 @@ export function handleSummary(data) {
   
   return {
     [filename]: htmlReport(data, {
-      title: "2_ramping_create_user_api_go_mysql_" + year + month + day + "_" + hours + minutes + seconds
+      title: "2_ramping_create_user_api_go_mariadb_" + year + month + day + "_" + hours + minutes + seconds
     }),
   };
 }

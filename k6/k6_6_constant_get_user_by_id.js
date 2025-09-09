@@ -59,7 +59,7 @@ export function handleSummary(data) {
   
   return {
     [filename]: htmlReport(data, {
-      title: "6_constant_get_user_by_id_api_go_mysql_" + year + month + day + "_" + hours + minutes + seconds
+      title: "6_constant_get_user_by_id_api_go_mariadb_" + year + month + day + "_" + hours + minutes + seconds
     }),
   };
 }
